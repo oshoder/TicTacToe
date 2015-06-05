@@ -1,22 +1,28 @@
 package tictactoe;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author fmarggra
  */
 public class GUI extends javax.swing.JFrame {
 
+    
+    final Icon icon1 = new ImageIcon(GUI.class.getResource(
+                "Kreis.png"));
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
+        kreisuntenrechts.setVisible(true);
 
     }
 
@@ -31,11 +37,20 @@ public class GUI extends javax.swing.JFrame {
 
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jFrame1 = new javax.swing.JFrame();
+        tictactoefeld = new javax.swing.JPanel();
+        kreisuntenrechts = new javax.swing.JButton();
+        feld = new javax.swing.JLabel();
+        kreisobenlinks = new javax.swing.JButton();
+        kreisoben = new javax.swing.JButton();
+        kreisobenrechts = new javax.swing.JButton();
+        kreismitterechts = new javax.swing.JButton();
+        kreismitte = new javax.swing.JButton();
+        kreismittelinks = new javax.swing.JButton();
+        kreisuntenlinks = new javax.swing.JButton();
+        kreisunten = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuDatei = new javax.swing.JMenu();
-        jMenuItemopen = new javax.swing.JMenuItem();
-        klicker = new javax.swing.JCheckBoxMenuItem();
-        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
+        spielstarten1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -54,33 +69,112 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 255, 0));
+        setMinimumSize(new java.awt.Dimension(510, 550));
+        getContentPane().setLayout(null);
+
+        tictactoefeld.setLayout(null);
+
+        kreisuntenrechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreisuntenrechts.setActionCommand("");
+        kreisuntenrechts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreisuntenrechtsActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreisuntenrechts);
+        kreisuntenrechts.setBounds(340, 320, 150, 140);
+
+        feld.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Feld.png"))); // NOI18N
+        tictactoefeld.add(feld);
+        feld.setBounds(0, 0, 490, 496);
+
+        kreisobenlinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreisobenlinks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreisobenlinksActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreisobenlinks);
+        kreisobenlinks.setBounds(0, 10, 150, 140);
+
+        kreisoben.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreisoben.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreisobenActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreisoben);
+        kreisoben.setBounds(170, 10, 150, 140);
+
+        kreisobenrechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreisobenrechts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreisobenrechtsActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreisobenrechts);
+        kreisobenrechts.setBounds(340, 10, 150, 140);
+
+        kreismitterechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreismitterechts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreismitterechtsActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreismitterechts);
+        kreismitterechts.setBounds(340, 160, 150, 140);
+
+        kreismitte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreismitte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreismitteActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreismitte);
+        kreismitte.setBounds(170, 170, 150, 140);
+
+        kreismittelinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreismittelinks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreismittelinksActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreismittelinks);
+        kreismittelinks.setBounds(0, 160, 150, 140);
+
+        kreisuntenlinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreisuntenlinks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreisuntenlinksActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreisuntenlinks);
+        kreisuntenlinks.setBounds(0, 320, 150, 140);
+
+        kreisunten.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        kreisunten.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kreisuntenActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(kreisunten);
+        kreisunten.setBounds(160, 320, 150, 140);
+
+        getContentPane().add(tictactoefeld);
+        tictactoefeld.setBounds(0, 0, 490, 496);
 
         jMenuDatei.setBackground(new java.awt.Color(51, 255, 102));
         jMenuDatei.setText("Datei");
 
-        jMenuItemopen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItemopen.setBackground(new java.awt.Color(0, 51, 153));
-        jMenuItemopen.setText("Öffnen");
-        jMenuItemopen.addActionListener(new java.awt.event.ActionListener() {
+        spielstarten1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        spielstarten1.setBackground(new java.awt.Color(0, 51, 153));
+        spielstarten1.setText("TicTacToe starten");
+        spielstarten1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemopenActionPerformed(evt);
+                spielstarten1ActionPerformed(evt);
             }
         });
-        jMenuDatei.add(jMenuItemopen);
-
-        klicker.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        klicker.setSelected(true);
-        klicker.setText("Einloggen");
-        klicker.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                klickerActionPerformed(evt);
-            }
-        });
-        jMenuDatei.add(klicker);
-
-        jRadioButtonMenuItem2.setSelected(true);
-        jRadioButtonMenuItem2.setText("jRadioButtonMenuItem2");
-        jMenuDatei.add(jRadioButtonMenuItem2);
+        jMenuDatei.add(spielstarten1);
 
         jMenuBar1.add(jMenuDatei);
 
@@ -89,27 +183,49 @@ public class GUI extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 575, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 431, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItemopenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemopenActionPerformed
+    private void spielstarten1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spielstarten1ActionPerformed
         System.out.println("Hallo welt");
-    }//GEN-LAST:event_jMenuItemopenActionPerformed
+    }//GEN-LAST:event_spielstarten1ActionPerformed
 
-    private void klickerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klickerActionPerformed
+    private void kreisuntenrechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisuntenrechtsActionPerformed
+        kreisuntenrechts.setIcon(icon1);
+        //kreisobenlinks.setVisible(false);
+    }//GEN-LAST:event_kreisuntenrechtsActionPerformed
 
-    }//GEN-LAST:event_klickerActionPerformed
+    private void kreisobenlinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisobenlinksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kreisobenlinksActionPerformed
+
+    private void kreisobenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisobenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kreisobenActionPerformed
+
+    private void kreisobenrechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisobenrechtsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kreisobenrechtsActionPerformed
+
+    private void kreismitterechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreismitterechtsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kreismitterechtsActionPerformed
+
+    private void kreismitteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreismitteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kreismitteActionPerformed
+
+    private void kreismittelinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreismittelinksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kreismittelinksActionPerformed
+
+    private void kreisuntenlinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisuntenlinksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kreisuntenlinksActionPerformed
+
+    private void kreisuntenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisuntenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kreisuntenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,13 +265,22 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel feld;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuDatei;
-    private javax.swing.JMenuItem jMenuItemopen;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
-    private javax.swing.JCheckBoxMenuItem klicker;
+    private javax.swing.JButton kreismitte;
+    private javax.swing.JButton kreismittelinks;
+    private javax.swing.JButton kreismitterechts;
+    private javax.swing.JButton kreisoben;
+    private javax.swing.JButton kreisobenlinks;
+    private javax.swing.JButton kreisobenrechts;
+    private javax.swing.JButton kreisunten;
+    private javax.swing.JButton kreisuntenlinks;
+    private javax.swing.JButton kreisuntenrechts;
+    private javax.swing.JMenuItem spielstarten1;
+    private javax.swing.JPanel tictactoefeld;
     // End of variables declaration//GEN-END:variables
 }
