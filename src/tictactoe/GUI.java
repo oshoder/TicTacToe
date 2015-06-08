@@ -254,19 +254,14 @@ public class GUI extends javax.swing.JFrame {
     //ermittler
     private int checkicon() {
         if (i % 2 == 0) {
-            System.out.println(i);
             return 0;
         } else {
-            System.out.println(i);
             return 1;
         }
     }
 
     public boolean checkwin() {
         //für kreuz:
-        //System.out.println(buttonIcons[1] + " " + buttonIcons[2] + " " + buttonIcons[3]
-        //        + "\n" + buttonIcons[4] + " " + buttonIcons[5] + " " + buttonIcons[6]
-        //        + "\n" + buttonIcons[7] + " " + buttonIcons[8] + " " + buttonIcons[9]);
         if(gewonnen == false){
         if (buttonIcons[1] == 1 && buttonIcons[2] == 1 && buttonIcons[3] == 1
                 || buttonIcons[4] == 1 && buttonIcons[5] == 1 && buttonIcons[6] == 1
@@ -333,11 +328,9 @@ public class GUI extends javax.swing.JFrame {
             if (alreadyUsed(id) == false) {
                 if (checkicon() == 0) {
                     buttonIcons[id] = 1;
-                    System.out.println("false: " + id);
                     return kreuzIcon;
                 } else {
                     buttonIcons[id] = 2;
-                    System.out.println("true: " + id);
                     return kreisIcon;
                 }
             } else {
