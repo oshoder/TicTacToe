@@ -1,7 +1,9 @@
 package tictactoe;
 
+import java.awt.Button;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,15 +16,44 @@ import javax.swing.ImageIcon;
  */
 public class GUI extends javax.swing.JFrame {
 
-    
-    final Icon icon1 = new ImageIcon(GUI.class.getResource(
-                "Kreis.png"));
+    //Variablen
+    private int i = -1;
+    private Icon kreisIcon = new ImageIcon(GUI.class.getResource(
+            "Kreis.png"));
+    private Icon kreuzIcon = new ImageIcon(GUI.class.getResource(
+            "Kreuz.png"));
+    private Icon leerIcon = new ImageIcon(GUI.class.getResource(
+            "Leer.png"));
+
+    private int[] buttonIcons;
+    private JButton[] buttons;
+    private boolean gewonnen = false;
+
+    private int kreuzwin = 0;
+    private int kreiswin = 0;
+    private int patt = 0;
+    private int spielanzahl = 0;
+
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
-        kreisuntenrechts.setVisible(true);
+        buttonIcons = new int[10];
+        buttons = new JButton[9];
+        buttons[0] = button1;
+        buttons[1] = button2;
+        buttons[2] = button3;
+        buttons[3] = button4;
+        buttons[4] = button5;
+        buttons[5] = button6;
+        buttons[6] = button7;
+        buttons[7] = button8;
+        buttons[8] = button9;
+        tictactoefeld.setVisible(false);
+        newgame.setVisible(false);
+        //kreisuntenrechts.setVisible(true);
+        //kreisobenrechts.setVisible(true);
 
     }
 
@@ -38,16 +69,21 @@ public class GUI extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jFrame1 = new javax.swing.JFrame();
         tictactoefeld = new javax.swing.JPanel();
-        kreisuntenrechts = new javax.swing.JButton();
+        button1 = new javax.swing.JButton();
+        button2 = new javax.swing.JButton();
+        button3 = new javax.swing.JButton();
+        button4 = new javax.swing.JButton();
+        button5 = new javax.swing.JButton();
+        button7 = new javax.swing.JButton();
+        button6 = new javax.swing.JButton();
+        button8 = new javax.swing.JButton();
+        button9 = new javax.swing.JButton();
+        spielanzahl1 = new javax.swing.JLabel();
+        winskreuz = new javax.swing.JLabel();
+        winskreis = new javax.swing.JLabel();
+        unentschieden = new javax.swing.JLabel();
+        newgame = new javax.swing.JButton();
         feld = new javax.swing.JLabel();
-        kreisobenlinks = new javax.swing.JButton();
-        kreisoben = new javax.swing.JButton();
-        kreisobenrechts = new javax.swing.JButton();
-        kreismitterechts = new javax.swing.JButton();
-        kreismitte = new javax.swing.JButton();
-        kreismittelinks = new javax.swing.JButton();
-        kreisuntenlinks = new javax.swing.JButton();
-        kreisunten = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuDatei = new javax.swing.JMenu();
         spielstarten1 = new javax.swing.JMenuItem();
@@ -69,104 +105,133 @@ public class GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 255, 0));
-        setMinimumSize(new java.awt.Dimension(510, 550));
+        setMinimumSize(new java.awt.Dimension(900, 550));
         getContentPane().setLayout(null);
 
+        tictactoefeld.setMinimumSize(new java.awt.Dimension(950, 550));
         tictactoefeld.setLayout(null);
 
-        kreisuntenrechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreisuntenrechts.setActionCommand("");
-        kreisuntenrechts.addActionListener(new java.awt.event.ActionListener() {
+        button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreisuntenrechtsActionPerformed(evt);
+                button1ActionPerformed(evt);
             }
         });
-        tictactoefeld.add(kreisuntenrechts);
-        kreisuntenrechts.setBounds(340, 320, 150, 140);
+        tictactoefeld.add(button1);
+        button1.setBounds(0, 10, 150, 140);
+
+        button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(button2);
+        button2.setBounds(170, 10, 150, 140);
+
+        button3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(button3);
+        button3.setBounds(340, 10, 150, 140);
+
+        button4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4ActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(button4);
+        button4.setBounds(0, 160, 150, 140);
+
+        button5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5ActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(button5);
+        button5.setBounds(170, 170, 150, 140);
+
+        button7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button7ActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(button7);
+        button7.setBounds(0, 320, 150, 140);
+
+        button6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6ActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(button6);
+        button6.setBounds(340, 160, 150, 140);
+
+        button8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button8ActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(button8);
+        button8.setBounds(160, 320, 150, 140);
+
+        button9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
+        button9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button9ActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(button9);
+        button9.setBounds(340, 320, 150, 140);
+
+        spielanzahl1.setFont(new java.awt.Font("DaunPenh", 1, 36)); // NOI18N
+        spielanzahl1.setText("Spielanzahl:");
+        tictactoefeld.add(spielanzahl1);
+        spielanzahl1.setBounds(490, 310, 250, 60);
+
+        winskreuz.setFont(new java.awt.Font("DaunPenh", 1, 36)); // NOI18N
+        winskreuz.setText("Kreuz Siege:");
+        tictactoefeld.add(winskreuz);
+        winskreuz.setBounds(490, 10, 200, 60);
+
+        winskreis.setFont(new java.awt.Font("DaunPenh", 1, 36)); // NOI18N
+        winskreis.setText("Kreis Siege:");
+        tictactoefeld.add(winskreis);
+        winskreis.setBounds(490, 100, 200, 60);
+
+        unentschieden.setFont(new java.awt.Font("DaunPenh", 1, 36)); // NOI18N
+        unentschieden.setText("Unentschieden: ");
+        tictactoefeld.add(unentschieden);
+        unentschieden.setBounds(490, 200, 250, 60);
+
+        newgame.setText("Neues Spiel");
+        newgame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newgameActionPerformed(evt);
+            }
+        });
+        tictactoefeld.add(newgame);
+        newgame.setBounds(500, 390, 200, 80);
 
         feld.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Feld.png"))); // NOI18N
         tictactoefeld.add(feld);
         feld.setBounds(0, 0, 490, 496);
 
-        kreisobenlinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreisobenlinks.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreisobenlinksActionPerformed(evt);
-            }
-        });
-        tictactoefeld.add(kreisobenlinks);
-        kreisobenlinks.setBounds(0, 10, 150, 140);
-
-        kreisoben.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreisoben.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreisobenActionPerformed(evt);
-            }
-        });
-        tictactoefeld.add(kreisoben);
-        kreisoben.setBounds(170, 10, 150, 140);
-
-        kreisobenrechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreisobenrechts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreisobenrechtsActionPerformed(evt);
-            }
-        });
-        tictactoefeld.add(kreisobenrechts);
-        kreisobenrechts.setBounds(340, 10, 150, 140);
-
-        kreismitterechts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreismitterechts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreismitterechtsActionPerformed(evt);
-            }
-        });
-        tictactoefeld.add(kreismitterechts);
-        kreismitterechts.setBounds(340, 160, 150, 140);
-
-        kreismitte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreismitte.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreismitteActionPerformed(evt);
-            }
-        });
-        tictactoefeld.add(kreismitte);
-        kreismitte.setBounds(170, 170, 150, 140);
-
-        kreismittelinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreismittelinks.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreismittelinksActionPerformed(evt);
-            }
-        });
-        tictactoefeld.add(kreismittelinks);
-        kreismittelinks.setBounds(0, 160, 150, 140);
-
-        kreisuntenlinks.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreisuntenlinks.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreisuntenlinksActionPerformed(evt);
-            }
-        });
-        tictactoefeld.add(kreisuntenlinks);
-        kreisuntenlinks.setBounds(0, 320, 150, 140);
-
-        kreisunten.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/Leer.png"))); // NOI18N
-        kreisunten.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kreisuntenActionPerformed(evt);
-            }
-        });
-        tictactoefeld.add(kreisunten);
-        kreisunten.setBounds(160, 320, 150, 140);
-
         getContentPane().add(tictactoefeld);
-        tictactoefeld.setBounds(0, 0, 490, 496);
+        tictactoefeld.setBounds(0, 0, 730, 500);
 
         jMenuDatei.setBackground(new java.awt.Color(51, 255, 102));
         jMenuDatei.setText("Datei");
 
-        spielstarten1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        spielstarten1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         spielstarten1.setBackground(new java.awt.Color(0, 51, 153));
         spielstarten1.setText("TicTacToe starten");
         spielstarten1.addActionListener(new java.awt.event.ActionListener() {
@@ -186,46 +251,182 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //ermittler
+    private int checkicon() {
+        if (i % 2 == 0) {
+            System.out.println(i);
+            return 0;
+        } else {
+            System.out.println(i);
+            return 1;
+        }
+    }
+
+    public boolean checkwin() {
+        //für kreuz:
+        //System.out.println(buttonIcons[1] + " " + buttonIcons[2] + " " + buttonIcons[3]
+        //        + "\n" + buttonIcons[4] + " " + buttonIcons[5] + " " + buttonIcons[6]
+        //        + "\n" + buttonIcons[7] + " " + buttonIcons[8] + " " + buttonIcons[9]);
+        if(gewonnen == false){
+        if (buttonIcons[1] == 1 && buttonIcons[2] == 1 && buttonIcons[3] == 1
+                || buttonIcons[4] == 1 && buttonIcons[5] == 1 && buttonIcons[6] == 1
+                || buttonIcons[7] == 1 && buttonIcons[8] == 1 && buttonIcons[9] == 1
+                || buttonIcons[1] == 1 && buttonIcons[5] == 1 && buttonIcons[9] == 1
+                || buttonIcons[3] == 1 && buttonIcons[5] == 1 && buttonIcons[7] == 1
+                || buttonIcons[1] == 1 && buttonIcons[4] == 1 && buttonIcons[7] == 1
+                || buttonIcons[2] == 1 && buttonIcons[5] == 1 && buttonIcons[8] == 1
+                || buttonIcons[3] == 1 && buttonIcons[6] == 1 && buttonIcons[9] == 1) {
+            gewonnen = true;
+            kreuzwin++;
+            spielanzahl++;
+            winskreuz.setText("Kreuz Siege: " + kreuzwin);
+            spielanzahl1.setText("Spielanzahl:" + spielanzahl);
+            newgame.setVisible(true);
+            return true;
+        }
+        //für kreis
+        if (buttonIcons[1] == 2 && buttonIcons[2] == 2 && buttonIcons[3] == 2
+                || buttonIcons[4] == 2 && buttonIcons[5] == 2 && buttonIcons[6] == 2
+                || buttonIcons[7] == 2 && buttonIcons[8] == 2 && buttonIcons[9] == 2
+                || buttonIcons[1] == 2 && buttonIcons[5] == 2 && buttonIcons[9] == 2
+                || buttonIcons[3] == 2 && buttonIcons[5] == 2 && buttonIcons[7] == 2
+                || buttonIcons[1] == 2 && buttonIcons[4] == 2 && buttonIcons[7] == 2
+                || buttonIcons[2] == 2 && buttonIcons[5] == 2 && buttonIcons[8] == 2
+                || buttonIcons[3] == 2 && buttonIcons[6] == 2 && buttonIcons[9] == 2) {
+            gewonnen = true;
+            kreiswin++;
+            spielanzahl++;
+            newgame.setVisible(true);
+            spielanzahl1.setText("Spielanzahl:" + spielanzahl);
+            winskreis.setText("Kreis Siege: " + kreiswin);
+            return true;
+        }
+        if (i == 8 && gewonnen == false) {
+            patt++;
+            spielanzahl++;
+            gewonnen = true;
+            newgame.setVisible(true);
+            unentschieden.setText("Unentschieden: " + patt);
+            spielanzahl1.setText("Spielanzahl:" + spielanzahl);
+        }
+        
+        }
+
+        return false;
+    }
+
+    private Icon getIcon(int id) {
+        if (buttonIcons[id] == 1) {
+            return kreuzIcon;
+        }
+        if (buttonIcons[id] == 2) {
+            return kreisIcon;
+        } else {
+            return leerIcon;
+        }
+
+    }
+
+    public Icon setIcon(int id) {
+        i++;
+        if (gewonnen != true) {
+            if (alreadyUsed(id) == false) {
+                if (checkicon() == 0) {
+                    buttonIcons[id] = 1;
+                    System.out.println("false: " + id);
+                    return kreuzIcon;
+                } else {
+                    buttonIcons[id] = 2;
+                    System.out.println("true: " + id);
+                    return kreisIcon;
+                }
+            } else {
+                return getIcon(id);
+            }
+        }
+        return getIcon(id);
+    }
+
+    private boolean alreadyUsed(int id) {
+        if (buttonIcons[id] == 2 || buttonIcons[id] == 1) {
+            i--;
+            if (i <= -1) {
+                i = 0;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     private void spielstarten1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spielstarten1ActionPerformed
-        System.out.println("Hallo welt");
+        tictactoefeld.setVisible(true);
     }//GEN-LAST:event_spielstarten1ActionPerformed
 
-    private void kreisuntenrechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisuntenrechtsActionPerformed
-        kreisuntenrechts.setIcon(icon1);
+    private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
+        button9.setIcon(setIcon(9));
         //kreisobenlinks.setVisible(false);
-    }//GEN-LAST:event_kreisuntenrechtsActionPerformed
+        checkwin();
+    }//GEN-LAST:event_button9ActionPerformed
 
-    private void kreisobenlinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisobenlinksActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kreisobenlinksActionPerformed
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        button1.setIcon(setIcon(1));
+        checkwin();
+    }//GEN-LAST:event_button1ActionPerformed
 
-    private void kreisobenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisobenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kreisobenActionPerformed
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        button2.setIcon(setIcon(2));
+        checkwin();
+    }//GEN-LAST:event_button2ActionPerformed
 
-    private void kreisobenrechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisobenrechtsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kreisobenrechtsActionPerformed
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+        button3.setIcon(setIcon(3));
+        checkwin();
+    }//GEN-LAST:event_button3ActionPerformed
 
-    private void kreismitterechtsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreismitterechtsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kreismitterechtsActionPerformed
+    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
+        button6.setIcon(setIcon(6));
+        checkwin();
+    }//GEN-LAST:event_button6ActionPerformed
 
-    private void kreismitteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreismitteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kreismitteActionPerformed
+    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+        button5.setIcon(setIcon(5));
+        checkwin();
+    }//GEN-LAST:event_button5ActionPerformed
 
-    private void kreismittelinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreismittelinksActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kreismittelinksActionPerformed
+    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
+        button4.setIcon(setIcon(4));
+        checkwin();
+    }//GEN-LAST:event_button4ActionPerformed
 
-    private void kreisuntenlinksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisuntenlinksActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kreisuntenlinksActionPerformed
+    private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
+        button7.setIcon(setIcon(7));
+        checkwin();
+    }//GEN-LAST:event_button7ActionPerformed
 
-    private void kreisuntenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kreisuntenActionPerformed
+    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
+        button8.setIcon(setIcon(8));
+        checkwin();
+    }//GEN-LAST:event_button8ActionPerformed
+
+    private void newgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newgameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_kreisuntenActionPerformed
+        for (int j = 0; j < buttonIcons.length; j++) {
+            buttons[0].setIcon(leerIcon);
+            buttons[1].setIcon(leerIcon);
+            buttons[2].setIcon(leerIcon);
+            buttons[3].setIcon(leerIcon);
+            buttons[4].setIcon(leerIcon);
+            buttons[5].setIcon(leerIcon);
+            buttons[6].setIcon(leerIcon);
+            buttons[7].setIcon(leerIcon);
+            buttons[8].setIcon(leerIcon);
+            i = -1;
+            buttonIcons[j] = 0;
+            gewonnen = false;
+            newgame.setVisible(false);
+        }
+    }//GEN-LAST:event_newgameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,22 +466,27 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button1;
+    private javax.swing.JButton button2;
+    private javax.swing.JButton button3;
+    private javax.swing.JButton button4;
+    private javax.swing.JButton button5;
+    private javax.swing.JButton button6;
+    private javax.swing.JButton button7;
+    private javax.swing.JButton button8;
+    private javax.swing.JButton button9;
     private javax.swing.JLabel feld;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuDatei;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JButton kreismitte;
-    private javax.swing.JButton kreismittelinks;
-    private javax.swing.JButton kreismitterechts;
-    private javax.swing.JButton kreisoben;
-    private javax.swing.JButton kreisobenlinks;
-    private javax.swing.JButton kreisobenrechts;
-    private javax.swing.JButton kreisunten;
-    private javax.swing.JButton kreisuntenlinks;
-    private javax.swing.JButton kreisuntenrechts;
+    private javax.swing.JButton newgame;
+    private javax.swing.JLabel spielanzahl1;
     private javax.swing.JMenuItem spielstarten1;
     private javax.swing.JPanel tictactoefeld;
+    private javax.swing.JLabel unentschieden;
+    private javax.swing.JLabel winskreis;
+    private javax.swing.JLabel winskreuz;
     // End of variables declaration//GEN-END:variables
 }
