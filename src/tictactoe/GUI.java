@@ -17,7 +17,7 @@ import javax.swing.JButton;
 public class GUI extends javax.swing.JFrame {
 
     //Variablen
-    private int i = -1;
+    private int zaehler = -1;
     private Icon kreisIcon = new ImageIcon(GUI.class.getResource(
             "Kreis.png"));
     private Icon kreuzIcon = new ImageIcon(GUI.class.getResource(
@@ -253,7 +253,7 @@ public class GUI extends javax.swing.JFrame {
 
     //ermittler
     private int checkicon() {
-        if (i % 2 == 0) {
+        if (zaehler % 2 == 0) {
             return 0;
         } else {
             return 1;
@@ -262,7 +262,7 @@ public class GUI extends javax.swing.JFrame {
 
     public boolean checkwin() {
         //für kreuz:
-        if(gewonnen == false){
+        if(! gewonnen){
         if (buttonIcons[1] == 1 && buttonIcons[2] == 1 && buttonIcons[3] == 1
                 || buttonIcons[4] == 1 && buttonIcons[5] == 1 && buttonIcons[6] == 1
                 || buttonIcons[7] == 1 && buttonIcons[8] == 1 && buttonIcons[9] == 1
@@ -296,7 +296,7 @@ public class GUI extends javax.swing.JFrame {
             winskreis.setText("Kreis Siege: " + kreiswin);
             return true;
         }
-        if (i == 8 && gewonnen == false) {
+        if (zaehler == 8 && !gewonnen) {
             patt++;
             spielanzahl++;
             gewonnen = true;
@@ -323,8 +323,8 @@ public class GUI extends javax.swing.JFrame {
     }
 
     public Icon setIcon(int id) {
-        i++;
-        if (gewonnen != true) {
+        zaehler++;
+        if (! gewonnen) {
             if (alreadyUsed(id) == false) {
                 if (checkicon() == 0) {
                     buttonIcons[id] = 1;
@@ -342,9 +342,9 @@ public class GUI extends javax.swing.JFrame {
 
     private boolean alreadyUsed(int id) {
         if (buttonIcons[id] == 2 || buttonIcons[id] == 1) {
-            i--;
-            if (i <= -1) {
-                i = 0;
+            zaehler--;
+            if (zaehler <= -1) {
+                zaehler = 0;
             }
             return true;
         } else {
@@ -414,7 +414,7 @@ public class GUI extends javax.swing.JFrame {
             buttons[6].setIcon(leerIcon);
             buttons[7].setIcon(leerIcon);
             buttons[8].setIcon(leerIcon);
-            i = -1;
+            zaehler = -1;
             buttonIcons[j] = 0;
             gewonnen = false;
             newgame.setVisible(false);
