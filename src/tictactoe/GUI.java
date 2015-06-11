@@ -25,36 +25,16 @@ public class GUI extends javax.swing.JFrame {
     private Icon leerIcon = new ImageIcon(GUI.class.getResource(
             "Leer.png"));
 
-    private int[] buttonIcons;
-    private JButton[] buttons;
-    private boolean gewonnen = false;
-
-    private int kreuzwin = 0;
-    private int kreiswin = 0;
-    private int patt = 0;
-    private int spielanzahl = 0;
+    private Ermittler e;
 
     /**
      * Creates new form GUI
      */
     public GUI() {
         initComponents();
-        buttonIcons = new int[10];
-        buttons = new JButton[9];
-        buttons[0] = button1;
-        buttons[1] = button2;
-        buttons[2] = button3;
-        buttons[3] = button4;
-        buttons[4] = button5;
-        buttons[5] = button6;
-        buttons[6] = button7;
-        buttons[7] = button8;
-        buttons[8] = button9;
+        e = new Ermittler();
         tictactoefeld.setVisible(false);
         newgame.setVisible(false);
-        //kreisuntenrechts.setVisible(true);
-        //kreisobenrechts.setVisible(true);
-
     }
 
     /**
@@ -68,6 +48,10 @@ public class GUI extends javax.swing.JFrame {
 
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jFrame1 = new javax.swing.JFrame();
+        quizfeld = new javax.swing.JPanel();
+        quizfeldbild = new javax.swing.JLabel();
+        punkte1 = new javax.swing.JLabel();
+        punkte2 = new javax.swing.JLabel();
         tictactoefeld = new javax.swing.JPanel();
         button1 = new javax.swing.JButton();
         button2 = new javax.swing.JButton();
@@ -87,7 +71,7 @@ public class GUI extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuDatei = new javax.swing.JMenu();
         spielstarten1 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        quizstart = new javax.swing.JMenuItem();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -107,6 +91,44 @@ public class GUI extends javax.swing.JFrame {
         setBackground(new java.awt.Color(0, 255, 0));
         setMinimumSize(new java.awt.Dimension(900, 550));
         getContentPane().setLayout(null);
+
+        quizfeld.setMinimumSize(new java.awt.Dimension(950, 550));
+
+        quizfeldbild.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tictactoe/jeopardyfeld.png"))); // NOI18N
+
+        punkte1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        punkte1.setText("Punkte Spieler1: ");
+
+        punkte2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        punkte2.setText("Punkte Spieler2:");
+
+        javax.swing.GroupLayout quizfeldLayout = new javax.swing.GroupLayout(quizfeld);
+        quizfeld.setLayout(quizfeldLayout);
+        quizfeldLayout.setHorizontalGroup(
+            quizfeldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quizfeldLayout.createSequentialGroup()
+                .addComponent(quizfeldbild)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(quizfeldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(punkte1)
+                    .addComponent(punkte2))
+                .addGap(0, 282, Short.MAX_VALUE))
+        );
+        quizfeldLayout.setVerticalGroup(
+            quizfeldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(quizfeldLayout.createSequentialGroup()
+                .addComponent(quizfeldbild)
+                .addGap(0, 54, Short.MAX_VALUE))
+            .addGroup(quizfeldLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(punkte1)
+                .addGap(141, 141, 141)
+                .addComponent(punkte2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(quizfeld);
+        quizfeld.setBounds(0, 0, 730, 500);
 
         tictactoefeld.setMinimumSize(new java.awt.Dimension(950, 550));
         tictactoefeld.setLayout(null);
@@ -241,183 +263,82 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenuDatei.add(spielstarten1);
 
-        jMenuBar1.add(jMenuDatei);
+        quizstart.setText("Jeopardy");
+        jMenuDatei.add(quizstart);
 
-        jMenu1.setText("Edit");
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenuDatei);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //ermittler
-    private int checkicon() {
-        if (zaehler % 2 == 0) {
-            return 0;
-        } else {
-            return 1;
-        }
-    }
-
-    public boolean checkwin() {
-        //für kreuz:
-        if(! gewonnen){
-        if (buttonIcons[1] == 1 && buttonIcons[2] == 1 && buttonIcons[3] == 1
-                || buttonIcons[4] == 1 && buttonIcons[5] == 1 && buttonIcons[6] == 1
-                || buttonIcons[7] == 1 && buttonIcons[8] == 1 && buttonIcons[9] == 1
-                || buttonIcons[1] == 1 && buttonIcons[5] == 1 && buttonIcons[9] == 1
-                || buttonIcons[3] == 1 && buttonIcons[5] == 1 && buttonIcons[7] == 1
-                || buttonIcons[1] == 1 && buttonIcons[4] == 1 && buttonIcons[7] == 1
-                || buttonIcons[2] == 1 && buttonIcons[5] == 1 && buttonIcons[8] == 1
-                || buttonIcons[3] == 1 && buttonIcons[6] == 1 && buttonIcons[9] == 1) {
-            gewonnen = true;
-            kreuzwin++;
-            spielanzahl++;
-            winskreuz.setText("Kreuz Siege: " + kreuzwin);
-            spielanzahl1.setText("Spielanzahl:" + spielanzahl);
-            newgame.setVisible(true);
-            return true;
-        }
-        //für kreis
-        if (buttonIcons[1] == 2 && buttonIcons[2] == 2 && buttonIcons[3] == 2
-                || buttonIcons[4] == 2 && buttonIcons[5] == 2 && buttonIcons[6] == 2
-                || buttonIcons[7] == 2 && buttonIcons[8] == 2 && buttonIcons[9] == 2
-                || buttonIcons[1] == 2 && buttonIcons[5] == 2 && buttonIcons[9] == 2
-                || buttonIcons[3] == 2 && buttonIcons[5] == 2 && buttonIcons[7] == 2
-                || buttonIcons[1] == 2 && buttonIcons[4] == 2 && buttonIcons[7] == 2
-                || buttonIcons[2] == 2 && buttonIcons[5] == 2 && buttonIcons[8] == 2
-                || buttonIcons[3] == 2 && buttonIcons[6] == 2 && buttonIcons[9] == 2) {
-            gewonnen = true;
-            kreiswin++;
-            spielanzahl++;
-            newgame.setVisible(true);
-            spielanzahl1.setText("Spielanzahl:" + spielanzahl);
-            winskreis.setText("Kreis Siege: " + kreiswin);
-            return true;
-        }
-        if (zaehler == 8 && !gewonnen) {
-            patt++;
-            spielanzahl++;
-            gewonnen = true;
-            newgame.setVisible(true);
-            unentschieden.setText("Unentschieden: " + patt);
-            spielanzahl1.setText("Spielanzahl:" + spielanzahl);
-        }
-        
-        }
-
-        return false;
-    }
-
-    private Icon getIcon(int id) {
-        if (buttonIcons[id] == 1) {
-            return kreuzIcon;
-        }
-        if (buttonIcons[id] == 2) {
-            return kreisIcon;
-        } else {
-            return leerIcon;
-        }
-
-    }
-
-    public Icon setIcon(int id) {
-        zaehler++;
-        if (! gewonnen) {
-            if (alreadyUsed(id) == false) {
-                if (checkicon() == 0) {
-                    buttonIcons[id] = 1;
-                    return kreuzIcon;
-                } else {
-                    buttonIcons[id] = 2;
-                    return kreisIcon;
-                }
-            } else {
-                return getIcon(id);
-            }
-        }
-        return getIcon(id);
-    }
-
-    private boolean alreadyUsed(int id) {
-        if (buttonIcons[id] == 2 || buttonIcons[id] == 1) {
-            zaehler--;
-            if (zaehler <= -1) {
-                zaehler = 0;
-            }
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     private void spielstarten1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_spielstarten1ActionPerformed
         tictactoefeld.setVisible(true);
     }//GEN-LAST:event_spielstarten1ActionPerformed
 
     private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
-        button9.setIcon(setIcon(9));
-        //kreisobenlinks.setVisible(false);
-        checkwin();
+        button9.setIcon(e.setIcon(9));
+        e.checkwin();
     }//GEN-LAST:event_button9ActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        button1.setIcon(setIcon(1));
-        checkwin();
+        button1.setIcon(e.setIcon(1));
+        e.checkwin();
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        button2.setIcon(setIcon(2));
-        checkwin();
+        button2.setIcon(e.setIcon(2));
+        e.checkwin();
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        button3.setIcon(setIcon(3));
-        checkwin();
+        button3.setIcon(e.setIcon(3));
+        e.checkwin();
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
-        button6.setIcon(setIcon(6));
-        checkwin();
+        button6.setIcon(e.setIcon(6));
+        e.checkwin();
     }//GEN-LAST:event_button6ActionPerformed
 
     private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
-        button5.setIcon(setIcon(5));
-        checkwin();
+        button5.setIcon(e.setIcon(5));
+        e.checkwin();
     }//GEN-LAST:event_button5ActionPerformed
 
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        button4.setIcon(setIcon(4));
-        checkwin();
+        button4.setIcon(e.setIcon(4));
+        e.checkwin();
     }//GEN-LAST:event_button4ActionPerformed
 
     private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
-        button7.setIcon(setIcon(7));
-        checkwin();
+        button7.setIcon(e.setIcon(7));
+        e.checkwin();
     }//GEN-LAST:event_button7ActionPerformed
 
     private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
-        button8.setIcon(setIcon(8));
-        checkwin();
+        button8.setIcon(e.setIcon(8));
+        e.checkwin();
     }//GEN-LAST:event_button8ActionPerformed
 
     private void newgameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newgameActionPerformed
         // TODO add your handling code here:
-        for (int j = 0; j < buttonIcons.length; j++) {
-            buttons[0].setIcon(leerIcon);
-            buttons[1].setIcon(leerIcon);
-            buttons[2].setIcon(leerIcon);
-            buttons[3].setIcon(leerIcon);
-            buttons[4].setIcon(leerIcon);
-            buttons[5].setIcon(leerIcon);
-            buttons[6].setIcon(leerIcon);
-            buttons[7].setIcon(leerIcon);
-            buttons[8].setIcon(leerIcon);
-            zaehler = -1;
-            buttonIcons[j] = 0;
-            gewonnen = false;
-            newgame.setVisible(false);
+        button1.setIcon(leerIcon);
+        button2.setIcon(leerIcon);
+        button3.setIcon(leerIcon);
+        button4.setIcon(leerIcon);
+        button5.setIcon(leerIcon);
+        button6.setIcon(leerIcon);
+        button7.setIcon(leerIcon);
+        button8.setIcon(leerIcon);
+        button9.setIcon(leerIcon);
+        e.zaehler = -1;
+        e.gewonnen = false;
+        newgame.setVisible(false);
+        for (int j = 0; j < e.buttonIcons.length; j++) {
+            e.buttonIcons[j] = 0;
         }
     }//GEN-LAST:event_newgameActionPerformed
 
@@ -470,16 +391,20 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton button9;
     private javax.swing.JLabel feld;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuDatei;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JButton newgame;
-    private javax.swing.JLabel spielanzahl1;
+    public static javax.swing.JButton newgame;
+    private javax.swing.JLabel punkte1;
+    private javax.swing.JLabel punkte2;
+    private javax.swing.JPanel quizfeld;
+    private javax.swing.JLabel quizfeldbild;
+    private javax.swing.JMenuItem quizstart;
+    public static javax.swing.JLabel spielanzahl1;
     private javax.swing.JMenuItem spielstarten1;
     private javax.swing.JPanel tictactoefeld;
-    private javax.swing.JLabel unentschieden;
-    private javax.swing.JLabel winskreis;
-    private javax.swing.JLabel winskreuz;
+    public static javax.swing.JLabel unentschieden;
+    public static javax.swing.JLabel winskreis;
+    public static javax.swing.JLabel winskreuz;
     // End of variables declaration//GEN-END:variables
 }
