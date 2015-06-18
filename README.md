@@ -1,11 +1,11 @@
-# TicTacToe
+# TicTacToe(Java)
 
 Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91SEt0bVF1LUczRXZxZ3FfS0VwQ1J6WW42YjZRaUw4LU9GOWRmeEkwRWc&authuser=0)(v2.5):
 
 
 **CHANGELOG:**
 
-v1(F):
+*v1(F):*
 
 -Ermittlerklasse
 
@@ -13,7 +13,7 @@ v1(F):
 
 
 
-v2(V):
+*v2(V):*
 
 -Design ordentlich gemacht(Buttons,Icons,Feld,Farben,Anordnung) 
 
@@ -22,7 +22,7 @@ v2(V):
 
 
 
-v2.5(V):
+*v2.5(V):*
 
 -Startbildschirm added(image(not clickable)
 
@@ -40,14 +40,14 @@ v2.5(V):
 
 
 
-**ToDo:**
+**TODO:**
 
 -STATS ZURÜCKSETZEN
 
 (-Cheat Code)
 
 
-**Verbesserbar:**
+**VERBESSERBAR:**
 
 -Hintergrund musik als Checkbox + Loop
 
