@@ -12,6 +12,10 @@ Link Akualisiert 18/06/15 21:45
 
 ToDo:
 
+-STATS ZURÜCKSETZEN
+
+-EXIT OPERATION
+
 -Hintergrundmusik
 
 -Cheat Code
