@@ -54,5 +54,19 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 -Starten aus Startbildschirm 
 
 
+*Link Akualisiert 18/06/15 21:45*
 
-Link Akualisiert 18/06/15 21:45
+
+**COPYRIGHT**
+
+This is the schoolwork of the following Users:
+
+- Oshoder
+- Cevapci
+- KINQQQQQQ
+
+The programm is available for public. 
+
+Any kind of Distortions of the code have to be granted by the users named above.
+
+Cheers :D
