@@ -1,26 +1,49 @@
 # TicTacToe
 
-Hier ist die neuste Version:
+Hier ist die neuste Version(v2.5):
 https://drive.google.com/open?id=0B2GSUNXSneswfl91SEt0bVF1LUczRXZxZ3FfS0VwQ1J6WW42YjZRaUw4LU9GOWRmeEkwRWc&authuser=0
 
--Design ordentlich gemacht(Buttons,Icons,Farben,Anordnung) 
+v1(F):
+
+-Ermittlerklasse
+-Spielmechanik
+
+v2(V):
+
+-Design ordentlich gemacht(Buttons,Icons,Feld,Farben,Anordnung) 
 
 -Statusanzeige gefixt, neues Layaout 
 
-Link Akualisiert 18/06/15 21:45
+
+
+v2.5(V):
+
+-Startbildschirm added(image(not clickable)
+
+-Backgroundmusic added(not stoppable->CheckBoxDummie)
+
+-Exit Operation added
+
+-Über Dialog added
+
+-Hilfe Dialog Added
+
+-mehr kleine Design Anpassungen
 
 
 ToDo:
 
 -STATS ZURÜCKSETZEN
 
--EXIT OPERATION
+(-Cheat Code)
 
--Hintergrundmusik
 
--Cheat Code
+Verbesserbar:
 
--Über (Namen/Schule)
+-Hintergrund musik als Checkbox + Loop
 
--Hilfe(Anleitung für Tic Tac Toe)
+-Starten aus Startbildschirm 
 
+
+
+Link Akualisiert 18/06/15 21:45
