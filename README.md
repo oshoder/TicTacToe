@@ -37,6 +37,10 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 -mehr kleine Design Anpassungen
 
 
+*v2.6(V):*
+
+-Fehler mit Musik wiedergabe (Titel laden) behoben
+
 
 
 
