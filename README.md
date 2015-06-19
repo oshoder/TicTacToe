@@ -77,4 +77,4 @@ The programm is available for public.
 
 Any kind of Distortions of the code have to be granted by the users named above.
 
-Cheers :D
+Just Fun :D
