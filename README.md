@@ -46,7 +46,11 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 **TODO:**
 
+-KREZ/KREIS ABWECHSELND
+
 -STATS ZURÜCKSETZEN
+
+-BUTTONS ANFANG FUNKTION
 
 (-Cheat Code)
 
