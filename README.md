@@ -1,6 +1,6 @@
 # TicTacToe(Java)
 
-Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91SEt0bVF1LUczRXZxZ3FfS0VwQ1J6WW42YjZRaUw4LU9GOWRmeEkwRWc&authuser=0)(v2.5):
+Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91SEt0bVF1LUczRXZxZ3FfS0VwQ1J6WW42YjZRaUw4LU9GOWRmeEkwRWc&authuser=0)(v2.6):
 
 
 **CHANGELOG:**
