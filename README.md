@@ -41,33 +41,30 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 -Fehler mit Musik wiedergabe (Titel laden) behoben
 
-*v2.7(V):*
+*v2.7(F):*
 
 -Kruez und Kreis wechseln sich ab
 
-*v2.8(V):*
+*v2.8(F):*
 
 -AGB und Starten Butten hinzugefügt
 
+(Über/AGB muss updaten,Cevapci, Toggle/CheatCode rausnehmen, Musik.LOOP, Parsen überprufen)
+
+
+
 **TODO:**
 
--KREZ/KREIS ABWECHSELND
-
--STATS ZURÜCKSETZEN
-
--BUTTONS ANFANG FUNKTION
-
+-Fixes
 (-Cheat Code)
 
 
-**VERBESSERBAR:**
+**FIXES:**
 
 -Hintergrund musik als Checkbox + Loop
 
--Starten aus Startbildschirm 
 
-
-*Link Akualisiert 18/06/15 21:45*
+*Link Akualisiert 23/06/15 09:45*
 
 
 **COPYRIGHT**
