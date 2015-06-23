@@ -51,6 +51,10 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 (Über/AGB muss updaten,Cevapci, Toggle/CheatCode rausnehmen, Musik.LOOP, Parsen überprufen)
 
+*v2.9(V):*
+
+-Kleinigkeiten
+
 
 
 **TODO:**
