@@ -1,6 +1,6 @@
 # TicTacToe(Java)
 
-Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91SEt0bVF1LUczRXZxZ3FfS0VwQ1J6WW42YjZRaUw4LU9GOWRmeEkwRWc&authuser=0)(v2.8):
+Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91SEt0bVF1LUczRXZxZ3FfS0VwQ1J6WW42YjZRaUw4LU9GOWRmeEkwRWc&authuser=0)(v2.9.5):
 
 
 **CHANGELOG:**
@@ -53,17 +53,23 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 *v2.9(V):*
 
--Kleinigkeiten
+-Kleinigkeiten(Aufgeräumt)
+
+*v2.9.5(V):*
+
+-Programm Icon hinzugefügt
+-Kleinigkeiten(Dialoge formatiert mit html, Button Ids)
+-Programm nun immer im Center
 
 
 
 **TODO:**
 
 
--Fixes
+(-KI-sp)
 (-Android App)
-(-Icon)
 (-Cheat Code)
+(-Fullscreen(müsste JPanel komplett überarbeiten)
 
 
 **FIXES:**
@@ -71,7 +77,7 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 -Hintergrund musik als Checkbox + Loop
 
 
-*Link Akualisiert 23/06/15 09:45*
+*Link Akualisiert 23/06/15 18:45*
 
 
 **COPYRIGHT**
@@ -82,8 +88,3 @@ This is the schoolwork of the following Users:
 - Cevapci
 - KINQQQQQQ
 
-The programm is available for public. 
-
-Any kind of Distortions of the code have to be granted by the users named above.
-
-Just Fun :D
