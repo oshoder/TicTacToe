@@ -59,7 +59,9 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 **TODO:**
 
+
 -Fixes
+(-Android App)
 (-Icon)
 (-Cheat Code)
 
