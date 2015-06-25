@@ -5,7 +5,7 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 **CHANGELOG:**
 
-*v1(F):*
+*v1.0(F):*
 
 -Ermittlerklasse
 
@@ -13,7 +13,7 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 
 
-*v2(V):*
+*v2.0(V):*
 
 -Design ordentlich gemacht(Buttons,Icons,Feld,Farben,Anordnung) 
 
@@ -58,7 +58,9 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 *v2.9.5(V):*
 
 -Programm Icon hinzugefügt
+
 -Kleinigkeiten(Dialoge formatiert mit html, Button Ids)
+
 -Programm nun immer im Center
 
 
@@ -81,7 +83,7 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 
 **COPYRIGHT**
-
+[License](https://drive.google.com/open?id=1If3s91GvL5gl_HJTGzaJjx79Xuswt6WD5PKjCxGaDjE)
 This is the schoolwork of the following Users:
 
 - Oshoder
