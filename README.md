@@ -84,9 +84,13 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 
 (-KI-sp)
+
 (-Android App)
+
 (-Cheat Code)
+
 (-Fullscreen(müsste JPanel komplett überarbeiten)
+
 
 
 **FIXES:**
