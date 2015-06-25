@@ -5,6 +5,7 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 **CHANGELOG:**
 
+
 *v1.0(F):*
 
 -Ermittlerklasse
@@ -13,11 +14,13 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 
 
+
 *v2.0(V):*
 
 -Design ordentlich gemacht(Buttons,Icons,Feld,Farben,Anordnung) 
 
 -Statusanzeige gefixt, neues Layaout 
+
 
 
 
@@ -37,13 +40,19 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 -mehr kleine Design Anpassungen
 
 
+
+
 *v2.6(V):*
 
 -Fehler mit Musik wiedergabe (Titel laden) behoben
 
+
+
 *v2.7(F):*
 
 -Kruez und Kreis wechseln sich ab
+
+
 
 *v2.8(F):*
 
@@ -51,9 +60,13 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 
 (Über/AGB muss updaten,Cevapci, Toggle/CheatCode rausnehmen, Musik.LOOP, Parsen überprufen)
 
+
+
 *v2.9(V):*
 
 -Kleinigkeiten(Aufgeräumt)
+
+
 
 *v2.9.5(V):*
 
@@ -62,6 +75,8 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 -Kleinigkeiten(Dialoge formatiert mit html, Button Ids)
 
 -Programm nun immer im Center
+
+
 
 
 
@@ -79,11 +94,16 @@ Hier ist die neuste [Version](https://drive.google.com/open?id=0B2GSUNXSneswfl91
 -Hintergrund musik als Checkbox + Loop
 
 
+
+
 *Link Akualisiert 23/06/15 18:45*
 
 
+
 **COPYRIGHT**
+
 [License](https://drive.google.com/open?id=1If3s91GvL5gl_HJTGzaJjx79Xuswt6WD5PKjCxGaDjE)
+
 This is the schoolwork of the following Users:
 
 - Oshoder
